@@ -30,3 +30,4 @@ For further information and support, please visit [the ZigOut home page](http://
 
 = 0.1 =
 * First public release
+
