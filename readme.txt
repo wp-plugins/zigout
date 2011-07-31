@@ -12,7 +12,7 @@ Puts the famous OUT Campaign "Scarlet A" on your site.
 
 ZigOut gives you a simple widget that shows the OUT Campaign's Atheist "A" on your sidebar or other widget area, with various options available to customise it.
 
-Requires WordPress 3.1+ and PHP 5.0+.
+Requires WordPress 3.1+ and PHP 5.2.4+.
 
 For further information and support, please visit [the ZigOut home page](http://www.zigpress.com/wordpress/plugins/zigout/).
 
