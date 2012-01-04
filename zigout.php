@@ -6,14 +6,14 @@ Description: Puts the famous OUT Campaign's Atheist "A" on your site.
 Version: 0.1.1
 Author: ZigPress
 Requires at least: 3.1
-Tested up to: 3.2.1
+Tested up to: 3.3.1
 Author URI: http://www.zigpress.com/
 License: GPLv2
 */
 
 
 /*
-Copyright (c) 2011 ZigPress
+Copyright (c) 2011-2012 ZigPress
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
