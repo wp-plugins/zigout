@@ -2,8 +2,9 @@
 /* Styles for ZigOut widget */
 
 
-.widget_zigout div { text-align:center; }
-.widget_zigout div a img { border:0; }
+.zigout_image { text-align:center; }
+.zigout_image img { border:0; }
+.zigout_caption { text-align:center; }
 
 
 /* EOF */
