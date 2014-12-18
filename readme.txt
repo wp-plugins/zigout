@@ -2,9 +2,9 @@
 Contributors: ZigPress
 Donate link: http://www.zigpress.com/donations/
 Tags: widget, sidebar, image, the out campaign, richard dawkins, scarlet letter, atheism, atheist A, scarlet A, zig, zigpress
-Requires at least: 3.5
-Tested up to: 3.9
-Stable tag: 0.2.2
+Requires at least: 3.6
+Tested up to: 4.1
+Stable tag: 0.2.3
 
 Puts the famous OUT Campaign "Scarlet A" on your site.
 
@@ -26,6 +26,9 @@ For further information and support, please visit [the ZigOut home page](http://
 
 == Changelog ==
 
+= 0.2.3 =
+* Confirmed compatibility with WordPress 4.1
+* Minimum compatible version raised to 3.6
 = 0.2.2 =
 * Confirmed compatibility with WordPress 3.9
 = 0.2.1 =
