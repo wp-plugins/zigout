@@ -3,17 +3,17 @@
 Plugin Name: ZigOut
 Plugin URI: http://www.zigpress.com/plugins/zigout/
 Description: Puts the famous OUT Campaign's Atheist "A" on your site.
-Version: 0.2.3
+Version: 0.2.4
 Author: ZigPress
 Requires at least: 3.6
-Tested up to: 4.1
+Tested up to: 4.2
 Author URI: http://www.zigpress.com/
 License: GPLv2
 */
 
 
 /*
-Copyright (c) 2011-2014 ZigPress
+Copyright (c) 2011-2015 ZigPress
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -47,12 +47,16 @@ if (!class_exists('widget_zigout')) {
 		function widget_zigout() {
 			$this->plugin_folder = get_bloginfo('url') . '/' . PLUGINDIR . '/' . dirname(plugin_basename(__FILE__));
 			global $wp_version;
-			if (version_compare(phpversion(), '5.2.4', '<')) wp_die('ZigOut requires PHP 5.2.4 or newer. Please update your server.'); 
-			if (version_compare($wp_version, '3.1', '<')) wp_die('ZigOut requires WordPress 3.1 or newer. Please update your installation.'); 
+			if (version_compare(phpversion(), '5.3', '<')) wp_die('ZigOut requires PHP 5.3 or newer. Please update your server.');
+			if (version_compare($wp_version, '3.6', '<')) wp_die('ZigOut requires WordPress 3.6 or newer. Please update your installation.');
 			$widget_opts = array('description' => 'Add the Atheist A to your sidebar.');
 			parent::WP_Widget(false, $name = 'ZigOut', $widget_opts);
 			add_action('wp_enqueue_scripts', array($this, 'action_wp_enqueue_scripts'));
 			add_filter('plugin_row_meta', array($this, 'filter_plugin_row_meta'), 10, 2 );
+			/* That which can be added without discussion, can be removed without discussion. */
+			remove_filter('the_title', 'capital_P_dangit', 11);
+			remove_filter('the_content', 'capital_P_dangit', 11);
+			remove_filter('comment_text', 'capital_P_dangit', 31);
 		}
 	
 	
