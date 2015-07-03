@@ -3,10 +3,10 @@
 Plugin Name: ZigOut
 Plugin URI: http://www.zigpress.com/plugins/zigout/
 Description: Puts the famous OUT Campaign's Atheist "A" on your site.
-Version: 0.2.4
+Version: 0.2.5
 Author: ZigPress
 Requires at least: 3.6
-Tested up to: 4.2
+Tested up to: 4.2.2
 Author URI: http://www.zigpress.com/
 License: GPLv2
 */
@@ -44,13 +44,13 @@ if (!class_exists('widget_zigout')) {
 		private $plugin_folder;
 	
 	
-		function widget_zigout() {
+		function __construct() {
 			$this->plugin_folder = get_bloginfo('url') . '/' . PLUGINDIR . '/' . dirname(plugin_basename(__FILE__));
 			global $wp_version;
 			if (version_compare(phpversion(), '5.3', '<')) wp_die('ZigOut requires PHP 5.3 or newer. Please update your server.');
 			if (version_compare($wp_version, '3.6', '<')) wp_die('ZigOut requires WordPress 3.6 or newer. Please update your installation.');
 			$widget_opts = array('description' => 'Add the Atheist A to your sidebar.');
-			parent::WP_Widget(false, $name = 'ZigOut', $widget_opts);
+			parent::__construct(false, $name = 'ZigOut', $widget_opts);
 			add_action('wp_enqueue_scripts', array($this, 'action_wp_enqueue_scripts'));
 			add_filter('plugin_row_meta', array($this, 'filter_plugin_row_meta'), 10, 2 );
 			/* That which can be added without discussion, can be removed without discussion. */
@@ -72,14 +72,14 @@ if (!class_exists('widget_zigout')) {
 	
 		function form($instance) {
 			?>
-			<p>Title (leave empty to hide): <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" /></p>
+			<p>Title (leave empty to hide): <input class="widefat" id="<?php echo @$this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" /></p>
 			<p><select class="widefat" id="<?php echo $this->get_field_id('shiny'); ?>" name="<?php echo $this->get_field_name('shiny'); ?>">
-			<option value="yes" <?php if (esc_attr($instance['shiny']) == 'yes') { echo('selected="selected"'); } ?> >Shiny version</option>
-			<option value="no" <?php if (esc_attr($instance['shiny']) != 'yes') { echo('selected="selected"'); } ?> >Plain version</option>
+			<option value="yes" <?php if (esc_attr(@$instance['shiny']) == 'yes') { echo('selected="selected"'); } ?> >Shiny version</option>
+			<option value="no" <?php if (esc_attr(@$instance['shiny']) != 'yes') { echo('selected="selected"'); } ?> >Plain version</option>
 			</select></p>
 			<p><select class="widefat" id="<?php echo $this->get_field_id('caption'); ?>" name="<?php echo $this->get_field_name('caption'); ?>">
-			<option value="yes" <?php if (esc_attr($instance['caption']) == 'yes') { echo('selected="selected"'); } ?> >Show caption below image</option>
-			<option value="no" <?php if (esc_attr($instance['caption']) != 'yes') { echo('selected="selected"'); } ?> >Do not show caption</option>
+			<option value="yes" <?php if (esc_attr(@$instance['caption']) == 'yes') { echo('selected="selected"'); } ?> >Show caption below image</option>
+			<option value="no" <?php if (esc_attr(@$instance['caption']) != 'yes') { echo('selected="selected"'); } ?> >Do not show caption</option>
 			</select></p>
 			<?php
 		}
