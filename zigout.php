@@ -3,10 +3,10 @@
 Plugin Name: ZigOut
 Plugin URI: http://www.zigpress.com/plugins/zigout/
 Description: Puts the famous OUT Campaign's Atheist "A" on your site.
-Version: 0.2.5
+Version: 0.2.6
 Author: ZigPress
 Requires at least: 3.6
-Tested up to: 4.2.2
+Tested up to: 4.3
 Author URI: http://www.zigpress.com/
 License: GPLv2
 */
